@@ -18,14 +18,25 @@ use App\Http\Controllers\api\VehiculoController;
 |
 */
 
+// Para iniciar sesión
 Route::post('userLogin', [LoginController::class, 'login']);
+
+// Para verificar el estado de la sesión
 Route::get('checkSession', [LoginController::class, 'verifySession']);
+
+// Para renderizar la vista en el caso de que no esté logueado quien intente hacer la petición
 Route::get('login', [LoginController::class, 'index'])->name('login');
 
+// Para la autenticación se utilizó sanctum, por medio de tokens
 Route::middleware(['auth:sanctum'])->group(function () {
+
+    // Obtener información
     Route::get('cargarProfesiones', [ProfesionController::class, 'load']);
     Route::get('cargarVehiculos', [VehiculoController::class, 'load']);
     Route::get('cargarPersonalProfesional', [PersonalProfesionalController::class, 'load']);
+
+    // Aplicar cambios en la base de datos
+    Route::post('registrarPersonalProfesional', [PersonalProfesionalController::class, 'store']);
     Route::put('actualizarPersonalProfesional', [PersonalProfesionalController::class, 'update']);
     Route::delete('eliminarPersonalProfesional', [PersonalProfesionalController::class, 'delete']);
     Route::post('userLogout', [LoginController::class, 'logout']);

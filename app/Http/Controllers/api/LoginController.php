@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Laravel\Sanctum\PersonalAccessToken;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use App\Models\User;
 use DB;
+
+
 
 class LoginController extends Controller
 {
@@ -32,12 +35,13 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
-        $user = $request->user();
-        return response()->json(['respuesta' => $user->tokens()->delete()], 200);
+        $usuario = $request->user();
+        return response()->json(['respuesta' => $usuario->tokens()->delete()], 200);
     }
 
     public function verifySession(Request $request)
     {
-        return response()->json(['respuesta' => Auth::check()], 200);
+        $token = PersonalAccessToken::findToken($request->bearerToken());
+        return response()->json(['respuesta' => $token == null ? false : true], 200);
     }
 }

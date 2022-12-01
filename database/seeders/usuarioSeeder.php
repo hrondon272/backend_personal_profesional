@@ -17,6 +17,21 @@ class usuarioSeeder extends Seeder
     public function run()
     {
         User::create([
+            'nombre' => 'administrador',
+            'apellido' => 'Perez',
+            'cedula' => 'v-------',
+            'fecha_nacimiento' => '1978-07-04',
+            'direccion' => 'Santa Teresa',
+            'municipio' => 'San Cristobal',
+            'telefono' => 'NS',
+            'sexo' => 'Masculino',
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('12345678'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        User::create([
             'nombre' => 'Maria',
             'apellido' => 'Ramirez',
             'cedula' => 'V14234567',
@@ -25,8 +40,6 @@ class usuarioSeeder extends Seeder
             'municipio' => 'San Cristobal',
             'telefono' => 'NS',
             'sexo' => 'Femenino',
-            'email' => 'maria@gmail.com',
-            'password' => Hash::make('12345678'),
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -40,8 +53,6 @@ class usuarioSeeder extends Seeder
             'municipio' => 'San Cristobal',
             'telefono' => '0276-3435566',
             'sexo' => 'Masculino',
-            'email' => 'carlos@gmail.com',
-            'password' => Hash::make('12345678'),
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -55,8 +66,6 @@ class usuarioSeeder extends Seeder
             'municipio' => 'Libertad',
             'telefono' => '2765432123',
             'sexo' => 'Femenino',
-            'email' => 'cristal@gmail.com',
-            'password' => Hash::make('12345678'),
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -69,8 +78,6 @@ class usuarioSeeder extends Seeder
             'direccion' => 'El Piñal',
             'municipio' => 'Fernandez Feo',
             'sexo' => 'Femenino',
-            'email' => 'belen@gmail.com',
-            'password' => Hash::make('12345678'),
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -84,8 +91,6 @@ class usuarioSeeder extends Seeder
             'municipio' => 'Cardenas',
             'telefono' => '4168798989',
             'sexo' => 'Masculino',
-            'email' => 'oscarN@gmail.com',
-            'password' => Hash::make('12345678'),
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -99,8 +104,6 @@ class usuarioSeeder extends Seeder
             'municipio' => 'Libertador',
             'telefono' => '2764532211',
             'sexo' => 'Masculino',
-            'email' => 'oscarT@gmail.com',
-            'password' => Hash::make('12345678'),
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -114,8 +117,6 @@ class usuarioSeeder extends Seeder
             'municipio' => 'Junin',
             'telefono' => '0414-7187766',
             'sexo' => 'Femenino',
-            'email' => 'yolimar@gmail.com',
-            'password' => Hash::make('12345678'),
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -129,8 +130,6 @@ class usuarioSeeder extends Seeder
             'municipio' => 'Garcia de Hevia',
             'telefono' => '3432211',
             'sexo' => 'Femenino',
-            'email' => 'mayra@gmail.com',
-            'password' => Hash::make('12345678'),
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -144,8 +143,6 @@ class usuarioSeeder extends Seeder
             'municipio' => 'Bolivar',
             'telefono' => '3564455',
             'sexo' => 'Masculino',
-            'email' => 'miguel@gmail.com',
-            'password' => Hash::make('12345678'),
             'created_at' => now(),
             'updated_at' => now()
         ]);
