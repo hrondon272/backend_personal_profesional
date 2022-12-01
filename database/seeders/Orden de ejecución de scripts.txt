@@ -1,0 +1,10 @@
+Nota: antes de ejecutar estos scripts por favor crear la base de datos con el nombre bd_profesional
+
+php artisan migrate --path=/database/migrations/2014_10_12_000000_create_users_table.php
+php artisan migrate --path=/database/migrations/2022_11_30_041502_create_profesion_table.php
+php artisan migrate --path=/database/migrations/2022_11_30_041520_create_vehiculo_table.php
+php artisan migrate --path=/database/migrations/2022_11_30_043030_create_usuario_profesion_table.php
+php artisan migrate --path=/database/migrations/2022_11_30_043059_create_usuario_vehiculo_table.php
+php artisan migrate
+
+php artisan db:seed 
