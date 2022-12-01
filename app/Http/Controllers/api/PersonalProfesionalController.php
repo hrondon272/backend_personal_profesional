@@ -33,6 +33,8 @@ class PersonalProfesionalController extends Controller
         $marca = $dataPersonalProfesional["marca"];
         $anio = $dataPersonalProfesional["año"];
 
+        $fecha_nacimiento = date('Y-m-d H:i:s', strtotime($fecha_nacimiento));
+
         $dataProfesion = DB::select('select id from profesion where nombre = ?', [$profesion]);
         $idProfesion = $dataProfesion[0]->id;
 
@@ -82,6 +84,8 @@ class PersonalProfesionalController extends Controller
         $nombre_vehiculo = $dataPersonalProfesional["nombre_vehiculo"];
         $marca = $dataPersonalProfesional["marca"];
         $anio = $dataPersonalProfesional["año"];
+
+        $fecha_nacimiento = date('Y-m-d H:i:s', strtotime($fecha_nacimiento));
         
         $personalProfesional = DB::select('SELECT u.id, p.nombre as "profesion", v.nombre as "nombre_vehiculo", v.marca as "marca", v.anio as "año" 
                                     FROM users u 
